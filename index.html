@@ -3,10 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MindTrackr (Unpolished)</title>
+  <meta name="description" content="MindTrackr - A mental health journal with mood tracking" />
+  <meta name="theme-color" content="#4a90e2" />
+  <title>MindTrackr - Mental Health Journal</title>
+  <link rel="preload" as="style" href="/src/styles.css" />
+  <style>
+    /* Critical CSS for layout stability */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      line-height: 1.6;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    
+    #root {
+      min-height: 100vh;
+      contain: layout style paint;
+    }
+    
+    /* Loading state to prevent layout shift */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-size: 1.125rem;
+      color: #64748b;
+    }
+  </style>
 </head>
-<body style="margin:0;font-family:Arial;">
-  <div id="root"></div>
+<body>
+  <div id="root">
+    <div class="loading" aria-label="Loading application">
+      Loading MindTrackr...
+    </div>
+  </div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
